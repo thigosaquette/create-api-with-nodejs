@@ -25,6 +25,9 @@ class User {
   @CreateDateColumn()
   created_at: Date;
 
+  @Column()
+  avatarURL: string;
+
   constructor() {
     if (!this.id) {
       this.id = uuidV4()
