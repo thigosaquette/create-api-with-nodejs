@@ -7,6 +7,4 @@ interface IUsersRepository {
   findById(id: string): Promise<User>;
 }
 
-export {
-  IUsersRepository
-}
+export { IUsersRepository };

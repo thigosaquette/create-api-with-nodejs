@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { container } from "tsyringe"
-import { CreateUserUseCase } from "./CreateUserUseCase";
+import { container } from "tsyringe";
 
+import { CreateUserUseCase } from "./CreateUserUseCase";
 
 class CreateUserController {
   async handle(request: Request, response: Response): Promise<Response> {
@@ -12,12 +12,11 @@ class CreateUserController {
       name,
       email,
       driver_license,
-      password
-    })
+      password,
+    });
 
     return response.status(201).send();
   }
-
 }
 
-export { CreateUserController }
+export { CreateUserController };

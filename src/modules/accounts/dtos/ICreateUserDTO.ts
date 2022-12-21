@@ -7,4 +7,4 @@ interface ICreateUserDTO {
   avatarURL?: string;
 }
 
-export { ICreateUserDTO }
+export { ICreateUserDTO };

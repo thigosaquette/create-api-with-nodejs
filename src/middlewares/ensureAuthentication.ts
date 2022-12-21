@@ -1,15 +1,18 @@
 import { NextFunction, Request, Response } from "express";
 import { verify } from "jsonwebtoken";
-import { AppError } from "../errors/AppError";
 
+import { AppError } from "../errors/AppError";
 import { UsersRepository } from "../modules/accounts/repositories/implementations/UsersRepository";
 
 interface IPayLoad {
   sub: string;
 }
 
-
-export async function ensureAuthentication(request: Request, response: Response, next: NextFunction) {
+export async function ensureAuthentication(
+  request: Request,
+  response: Response,
+  next: NextFunction
+) {
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
@@ -19,7 +22,10 @@ export async function ensureAuthentication(request: Request, response: Response,
   const [, token] = authHeader.split(" ");
 
   try {
-    const { sub: user_id } = verify(token, "e73d5c321980933060fec06b084f730d") as IPayLoad;
+    const { sub: user_id } = verify(
+      token,
+      "e73d5c321980933060fec06b084f730d"
+    ) as IPayLoad;
 
     const usersRepository = new UsersRepository();
     const user = usersRepository.findById(user_id);
