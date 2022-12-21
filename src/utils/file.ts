@@ -8,4 +8,4 @@ export const deleteFile = async (fileName: string) => {
   } finally {
     await fs.promises.unlink(fileName);
   }
-}
+};
