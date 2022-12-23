@@ -46,7 +46,7 @@ export class CreateUsers1671451711919 implements MigrationInterface {
           },
 
           {
-            name: "isAdmin",
+            name: "admin",
 
             type: "boolean",
 
